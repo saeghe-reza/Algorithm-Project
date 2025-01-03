@@ -1,3 +1,12 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+import static java.lang.StrictMath.pow;
+
+
 public class LinearAndBinarySearch{
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -52,6 +61,7 @@ public class LinearAndBinarySearch{
                     System.out.println("phrase \"" + target + "\" not find.");
                     System.out.println("test time is :"+(end1-start)/pow(10,4));
                 }
+    }
 
 
 
@@ -79,4 +89,5 @@ public class LinearAndBinarySearch{
         }
 
         return -1;
+    }
     }
