@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Scanner;
 import static java.lang.StrictMath.pow;
 
-
 public class LinearAndBinarySearch{
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -29,6 +28,8 @@ public class LinearAndBinarySearch{
         System.out.print("plz enter your desired name:");
         String target = in.nextLine();
         System.out.print("what are you want to use\n1.linear search:\n2.binary search\n3.hashAndBloomFilter:");
+        switch (in.nextInt()) {
+            case 1: {
             //جستجوی خطی
                 //پیمایش تمام اعضا از ابتدا
                 long start = System.nanoTime();
@@ -43,12 +44,12 @@ public class LinearAndBinarySearch{
                         long end2 = System.nanoTime();
                         System.out.println("phrase \"" + target + "\" not find.");
                         System.out.println("test time is :"+(end2-start)/pow(10,4));
-                    }
-                
+                    }   
             }
-
+            break;
+            }
+            case 2: {
                 //جستجوی باینری
-
                 long start = System.nanoTime();
                 //ارجاع به تابع
                 int resultIndex = binarySearch(database, target);
@@ -61,9 +62,17 @@ public class LinearAndBinarySearch{
                     System.out.println("phrase \"" + target + "\" not find.");
                     System.out.println("test time is :"+(end1-start)/pow(10,4));
                 }
-    }
-
-
+                break;
+            }
+            case 3: {
+                //جستجوی هش و بلوم فیلتر
+                HashAndBloomFilter3.containsInBloomFilter(database,target);
+                break;
+            }
+            default:
+                System.out.println("YOUR ENTRY IS NOT CORRECT!!");
+        }
+}
 
  public static int binarySearch(ArrayList<String> database, String target) {
         //عضو سمت چپ(اولی)
