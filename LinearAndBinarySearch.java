@@ -1,16 +1,16 @@
-import java.util.ArrayList;
-import java.util.Collections;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 import static java.lang.StrictMath.pow;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class LinearAndBinarySearch{
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         //مسیر فایل رو انتخاب میکنیم
-        String filePath = "C:\\Users\\hp\\Downloads\\usernames.txt";
+        String filePath = "C:\\Users\\mashadservice\\Desktop\\New folder (4)\\usernames.txt";
         ArrayList<String> database = new ArrayList<>();
         //تعریف فایل ریدر برای خواندن فایل
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -66,7 +66,7 @@ public class LinearAndBinarySearch{
             }
             case 3: {
                 //جستجوی هش و بلوم فیلتر
-                HashAndBloomFilter3.containsInBloomFilter(database,target);
+                //HashAndBloomFilter3.containsInBloomFilter(database,target);
                 break;
             }
             default:
