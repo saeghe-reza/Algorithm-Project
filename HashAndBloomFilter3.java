@@ -16,3 +16,23 @@ public class HashAndBloomFilter3 {
         }
         return Math.abs(hash);
     }
+
+public static void containsInBloomFilter(ArrayList<String> phrases,String entry,int choice) {
+
+        
+        HashMap<Integer, String> hashMap = new HashMap<>();
+    
+            BitSet bloomFilter = new BitSet(SIZE);
+
+            for (String phrase : phrases) {
+                int hash1 = hash(phrase, SEED1);
+                int hash2 = hash(phrase, SEED2);
+
+                hashMap.put(hash1, phrase);
+
+                bloomFilter.set(hash1);
+                bloomFilter.set(hash2);
+            }
+            
+        
+}
