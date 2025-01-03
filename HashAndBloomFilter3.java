@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.BitSet;
+import static java.lang.StrictMath.pow;
 
 public class HashAndBloomFilter3 {
 
-    private static int SIZE = 1000 ; 
+    private static int SIZE ; 
     private static final int SEED1 = 31; 
     private static final int SEED2 = 37; 
 
@@ -21,7 +22,10 @@ public static void containsInBloomFilter(ArrayList<String> phrases,String entry,
 
         
         HashMap<Integer, String> hashMap = new HashMap<>();
-    
+
+        double p = 0.000001;
+        SIZE = (int) Math.ceil(-phrases.size() * Math.log(p) / (Math.pow(Math.log(2), 2)));
+
             BitSet bloomFilter = new BitSet(SIZE);
              int inputHash1 = hash(entry, SEED1);
              int inputHash2 = hash(entry, SEED2);
