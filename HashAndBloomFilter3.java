@@ -33,6 +33,22 @@ public static void containsInBloomFilter(ArrayList<String> phrases,String entry,
                 bloomFilter.set(hash1);
                 bloomFilter.set(hash2);
             }
+
+            else {
+            for (String phrase : phrases) {
+                int hash1 = hash(phrase, SEED1);
+
+                hashMap.put(hash1, phrase);
+            }
+            long start1 = System.nanoTime();
+            if (hashMap.containsKey(inputHash1) && hashMap.get(inputHash1).equals(entry)) {
+                System.out.println("Definitely found in the list.");
+            } else {
+                System.out.println("Definitely not in the list.");
+            }
+            long end1 = System.nanoTime();
+            System.out.println("test time is :"+(end1-start1)/pow(10,4));
+        }
             
         
 }
