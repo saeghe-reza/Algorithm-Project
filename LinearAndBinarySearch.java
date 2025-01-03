@@ -27,8 +27,9 @@ public class LinearAndBinarySearch{
         //گرفتن ورودی
         System.out.print("plz enter your desired name:");
         String target = in.nextLine();
-        System.out.print("what are you want to use\n1.linear search:\n2.binary search\n3.hashAndBloomFilter:");
-        switch (in.nextInt()) {
+        System.out.print("what are you want to use\n1.linear search:\n2.binary search\n3.hashAndBloomFilter:\n4.hash:");
+        int choice=in.nextInt();
+        switch (choice) {
             case 1: {
             //جستجوی خطی
                 //پیمایش تمام اعضا از ابتدا
@@ -64,9 +65,9 @@ public class LinearAndBinarySearch{
                 }
                 break;
             }
-            case 3: {
+            case 3,4: {
                 //جستجوی هش و بلوم فیلتر
-                //HashAndBloomFilter3.containsInBloomFilter(database,target);
+                HashAndBloomFilter3.containsInBloomFilter(database,target,choice);
                 break;
             }
             default:
