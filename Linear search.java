@@ -38,10 +38,10 @@ public class LinearAndBinarySearch{
                 
             }
 
-
+                //جستجوی باینری
 
                 long start = System.nanoTime();
-
+                //ارجاع به تابع
                 int resultIndex = binarySearch(database, target);
                 if (resultIndex != -1) {
                     long end = System.nanoTime();
@@ -56,21 +56,21 @@ public class LinearAndBinarySearch{
 
 
  public static int binarySearch(ArrayList<String> database, String target) {
-       
+        //عضو سمت چپ(اولی)
         int left = 0;
-        
+        //عضو سمت راست اخری
         int right = database.size() - 1;
-        
+        //حلقه تا زمانی ادامه دارد که دو عنصر چپ و راست به هم برسند
         while (left <= right) {
             int mid = left + (right - left) / 2;
 
             int comparison = target.compareTo(database.get(mid));
 
             if (comparison == 0) {
-                
+                //برگرداندن عنصر میانی
                 return mid;
             }
-            
+            //مقایسه ورودی یا عنصر میانی
             if (comparison > 0) {
                 left = mid + 1;
             } else {
