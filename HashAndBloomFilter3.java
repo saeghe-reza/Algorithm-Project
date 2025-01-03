@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class HashAndBloomFilter3 {
 
-    private static int SIZE ; 
+    private static int SIZE = 1000 ; 
     private static final int SEED1 = 31; 
     private static final int SEED2 = 37; 
 
