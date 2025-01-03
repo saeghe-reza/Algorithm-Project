@@ -39,6 +39,22 @@ public class LinearAndBinarySearch{
             }
 
 
+
+                long start = System.nanoTime();
+
+                int resultIndex = binarySearch(database, target);
+                if (resultIndex != -1) {
+                    long end = System.nanoTime();
+                    System.out.println("phrase \"" + target + "\" in index " + resultIndex + " find.");
+                    System.out.println("test time is :"+(end-start)/pow(10,4));
+                } else {
+                    long end1 = System.nanoTime();
+                    System.out.println("phrase \"" + target + "\" not find.");
+                    System.out.println("test time is :"+(end1-start)/pow(10,4));
+                }
+
+
+
  public static int binarySearch(ArrayList<String> database, String target) {
        
         int left = 0;
